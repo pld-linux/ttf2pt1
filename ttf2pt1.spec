@@ -1,3 +1,4 @@
+# TODO: cleanup in %{_datadir}
 Summary:	TrueType to Adobe Type 1 font converter
 Summary(pl):	Konwerter czcionek TrueType do Type1
 Name:		ttf2pt1
@@ -28,7 +29,7 @@ Konwerter czcionek TrueType do Type1 autorstwa Marka Heatha
 %prep
 %setup -q
 %patch0 -p0
-%patch1 -p0
+%patch1 -p3
 
 %build
 %{__make} ttf2pt1 docs mans \
@@ -36,29 +37,28 @@ Konwerter czcionek TrueType do Type1 autorstwa Marka Heatha
 		CC="%{__cc}" \
 		CFLAGS_SYS='%{rpmcflags} -D_GNU_SOURCE' \
 		LIBS_SYS='-lm' \
-		CFLAGS_FT='-DUSE_FREETYPE -I/usr/include/freetype2 -I/usr/include' \
+		CFLAGS_FT='-DUSE_FREETYPE -I/usr/include/freetype2' \
 		CFLAGS_PREF='-DPREFER_FREETYPE' \
 		LIBS_FT='-L/usr/lib -lfreetype'
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/%{name},%{_datadir}/%{name},%{_mandir}/man{1,5}}
 
-#%{__make} install INSTDIR=$RPM_BUILD_ROOT%{_prefix} \
-#		BINDIR=%{_bindir} \
-#		LIBXDIR=%{_libdir}/ttf2pt1 \
-#		SHAREDIR=%{_datadir}/ttf2pt1 \
-#		MANDIR=%{_mandir}
-
-#install -s -m 0555 ttf2pt1 $RPM_BUILD_ROOT%{_bindir}
-#install -m 0555 scripts/* $RPM_BUILD_ROOT%{_datadir}/%{name}
-#chmod 0444 $RPM_BUILD_ROOT%{_datadir}/%{name}/convert.cfg.sample
+%{__make} install INSTDIR=$RPM_BUILD_ROOT%{_prefix} \
+		BINDIR=$RPM_BUILD_ROOT%{_bindir} \
+		LIBXDIR=$RPM_BUILD_ROOT%{_libdir}/ttf2pt1 \
+		SHAREDIR=$RPM_BUILD_ROOT%{_datadir}/ttf2pt1 \
+		MANDIR=$RPM_BUILD_ROOT%{_mandir} \
+		OWNER=`id -u` \
+		GROUP=`id -g`
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README README.html INSTALL INSTALL.html
-#%attr(755,root,root) %{_bindir}/ttf2pt1
-#%{_datadir}/%{name}
+%doc README README.html
+%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/ttf2pt1
+%{_datadir}/ttf2pt1
+%{_mandir}/man1/*

@@ -1,0 +1,11 @@
+--- Makefile.z	Thu Sep 26 00:40:36 2002
++++ Makefile	Thu Sep 26 00:45:00 2002
+@@ -142,7 +142,7 @@
+ 	@echo >&2
+ 
+ DOCS=CHANGES README FONTS FONTS.hpux encodings/README other/README \
+-	app/X11/README app/netscape/README app/TeX/README
++	app/X11/README app/netscape/README
+ 
+ SUBDIRS = app encodings maps scripts other
+ TXTFILES = README* FONTS* CHANGES* COPYRIGHT

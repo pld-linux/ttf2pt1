@@ -6,6 +6,7 @@ Release:	1
 License:	Distributable
 Group:		Applications/Printing
 Source0:	http://dl.sourceforge.net/ttf2pt1/%{name}-%{version}.tgz
+# Source0-md5:	b255ad96730c54056ea838dd80df97c2
 Patch0:		%{name}-am.patch
 Patch1:		%{name}-DESTDIR.patch
 URL:		http://ttf2pt1.sf.net/

@@ -1,14 +1,15 @@
 Summary:	TrueType to Adobe Type 1 font converter
 Summary(pl):	Konwerter czcionek TrueType do Type1
 Name:		ttf2pt1
-Version:	3.4.3
+Version:	3.4.4
 Release:	1
 License:	Distributable
 Group:		Applications/Printing
 Source0:	http://dl.sourceforge.net/ttf2pt1/%{name}-%{version}.tgz
-# Source0-md5:	b255ad96730c54056ea838dd80df97c2
+# Source0-md5:	cb143c07cc83167875ca09ea720d4932
 Patch0:		%{name}-am.patch
 Patch1:		%{name}-DESTDIR.patch
+Patch2:		%{name}-ft2build_h.patch
 URL:		http://ttf2pt1.sf.net/
 BuildRequires:	freetype-devel >= 2.0.4
 Requires:	t1utils
@@ -30,8 +31,10 @@ Konwerter fontów TrueType do Type1 autorstwa Marka Heatha
 %setup -q
 %patch0 -p0
 %patch1 -p1
+%patch2 -p1
 
 %build
+
 %{__make} ttf2pt1 docs mans \
 	CFLAGS_EXTT1ASM='-DEXTERNAL_T1ASM' \
 	CC="%{__cc}" \
@@ -62,5 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES.html COPYRIGHT FONTS.html README.html
 %attr(755,root,root) %{_bindir}/ttf2pt1*
+%attr(755,root,root) %{_libdir}/ttf2pt1
 %{_datadir}/ttf2pt1
 %{_mandir}/man1/*

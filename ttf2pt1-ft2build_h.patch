@@ -1,0 +1,12 @@
+diff -urN ttf2pt1-3.4.4.orig/ft.c ttf2pt1-3.4.4/ft.c
+--- ttf2pt1-3.4.4.orig/ft.c	2003-12-31 21:30:50.000000000 +0000
++++ ttf2pt1-3.4.4/ft.c	2004-06-27 21:33:04.000000000 +0000
+@@ -4,6 +4,8 @@
+  * see COPYRIGHT
+  *
+  */
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ 
+ #ifdef USE_FREETYPE
+ 

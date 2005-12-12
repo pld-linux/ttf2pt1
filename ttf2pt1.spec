@@ -40,7 +40,7 @@ Konwerter fontów TrueType do Type1 autorstwa Marka Heatha
 	CC="%{__cc}" \
 	CFLAGS_SYS='%{rpmcflags} -D_GNU_SOURCE' \
 	LIBS_SYS='-lm' \
-	CFLAGS_FT='-DUSE_FREETYPE -I/usr/include/freetype2' \
+	CFLAGS_FT='-DUSE_FREETYPE -I%{_includedir}/freetype2' \
 	CFLAGS_PREF='-DPREFER_FREETYPE' \
 	LIBS_FT='-L/usr/lib -lfreetype' \
 	INSTDIR=%{_prefix}

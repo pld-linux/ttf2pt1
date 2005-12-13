@@ -12,8 +12,8 @@ Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-ft2build_h.patch
 URL:		http://ttf2pt1.sf.net/
 BuildRequires:	freetype-devel >= 2.0.4
-Requires:	t1utils
 Requires:	freetype > 2.0.4
+Requires:	t1utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -40,7 +40,7 @@ Konwerter fontów TrueType do Type1 autorstwa Marka Heatha
 	CC="%{__cc}" \
 	CFLAGS_SYS='%{rpmcflags} -D_GNU_SOURCE' \
 	LIBS_SYS='-lm' \
-	CFLAGS_FT='-DUSE_FREETYPE -I%{_includedir}/freetype2' \
+	CFLAGS_FT='-DUSE_FREETYPE -I/usr/include/freetype2' \
 	CFLAGS_PREF='-DPREFER_FREETYPE' \
 	LIBS_FT='-L/usr/lib -lfreetype' \
 	INSTDIR=%{_prefix}

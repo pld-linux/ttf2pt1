@@ -10,7 +10,7 @@ Source0:	http://dl.sourceforge.net/ttf2pt1/%{name}-%{version}.tgz
 Patch0:		%{name}-am.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-ft2build_h.patch
-URL:		http://ttf2pt1.sf.net/
+URL:		http://ttf2pt1.sourceforge.net/
 BuildRequires:	freetype-devel >= 2.0.4
 Requires:	freetype > 2.0.4
 Requires:	t1utils

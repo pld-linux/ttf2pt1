@@ -1,5 +1,5 @@
 Summary:	TrueType to Adobe Type 1 font converter
-Summary(pl):	Konwerter czcionek TrueType do Type1
+Summary(pl.UTF-8):   Konwerter czcionek TrueType do Type1
 Name:		ttf2pt1
 Version:	3.4.4
 Release:	1
@@ -22,10 +22,10 @@ True Type Font to Adobe Type 1 font converter
  - Based on ttf2pfa by Andrew Weeks <ccsaw@bath.ac.uk>
  - With help from Frank M. Siegert <fms@this.net>
 
-%description -l pl
-Konwerter fontów TrueType do Type1 autorstwa Marka Heatha
+%description -l pl.UTF-8
+Konwerter fontÃ³w TrueType do Type1 autorstwa Marka Heatha
 <mheath@netspace.net.au>, oparty o ttf2pfa autorstwa Andrew Weeksa
-<ccsaw@bath.ac.uk>, z pomoc± Franka M. Siegerta <fms@this.net>.
+<ccsaw@bath.ac.uk>, z pomocÄ… Franka M. Siegerta <fms@this.net>.
 
 %prep
 %setup -q

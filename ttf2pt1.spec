@@ -17,7 +17,7 @@ Requires:	t1utils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-True Type Font to Adobe Type 1 font converter
+TrueType Font to Adobe Type 1 font converter
  - By Mark Heath <mheath@netspace.net.au>
  - Based on ttf2pfa by Andrew Weeks <ccsaw@bath.ac.uk>
  - With help from Frank M. Siegert <fms@this.net>
